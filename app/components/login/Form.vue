@@ -65,9 +65,6 @@ async function handleSubmit() {
     />
     <FieldGroup>
       <Field :data-invalid="!!error">
-        <FieldLabel for="token">
-          {{ $t('login.token_label') }}
-        </FieldLabel>
         <Input
           id="token"
           v-model="token"

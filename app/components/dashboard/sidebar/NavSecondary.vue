@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ArrowUpCircle, Coffee, Languages, Laptop, Moon, Sun } from '@lucide/vue'
+import { ArrowUpCircle, Languages, Laptop, Moon, Sun } from '@lucide/vue'
 import { useSidebar } from '@/components/ui/sidebar'
 
-const { coffee } = useAppConfig()
 const colorMode = useColorMode()
 const { t, setLocale, locales } = useI18n()
 const { isMobile, state } = useSidebar()
@@ -21,23 +20,6 @@ const releaseLabel = computed(() => t('sidebar.update', {
   <SidebarGroup>
     <SidebarGroupContent>
       <SidebarMenu :class="secondaryMenuClass">
-        <SidebarMenuItem>
-          <SidebarMenuButton
-            as-child
-            :tooltip="$t('sidebar.coffee')"
-            class="w-9 justify-center px-0"
-          >
-            <a
-              :href="coffee"
-              target="_blank"
-              rel="noopener noreferrer"
-              :aria-label="$t('sidebar.coffee')"
-            >
-              <Coffee aria-hidden="true" />
-            </a>
-          </SidebarMenuButton>
-        </SidebarMenuItem>
-
         <SidebarMenuItem v-if="hasUpdate">
           <SidebarMenuButton
             as-child

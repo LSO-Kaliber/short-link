@@ -50,6 +50,9 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
+    '/': {
+      redirect: '/dashboard',
+    },
     '/dashboard': {
       redirect: '/dashboard/links',
     },
